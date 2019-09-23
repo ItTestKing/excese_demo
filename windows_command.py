@@ -1,6 +1,7 @@
 # -*- coding:utf-8 -*-
 import random
 import time
+import subprocess
 
 class Command(object):
     # 1.打开文件,读取文件
@@ -17,12 +18,13 @@ class Command(object):
         print(list_sort)
         return command[list_sort]
 
-    # 打印数据
+    # 打开CMD命令
     def prt(self):
         i = 0
         while i < 100:
             i += 1
-            print(self.randomprt_command())
+            subprocess.call(self.randomprt_command(),shell=True)
+            subprocess.Popen(self.randomprt_command(),shell=True)
             time.sleep(5)
 
 
